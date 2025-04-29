@@ -1,11 +1,127 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yatri - Go anywhere with Yatri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
 
-.neon-input:focus {
-  box-shadow:
-    0 0 5px #fff,
-    0 0 10px #0ff,
-    0 0 20px #0ff,
-    0 0 40px #0ff;
-}
+  <!-- Accessibility: Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only p-2 bg-black text-white fixed top-0 left-0 z-50">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 border-b border-gray-200">
+    <a href="/" class="text-2xl font-bold text-black">Yatri</a>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="/us/en/ride" class="text-gray-700 hover:text-black font-semibold">Ride</a>
+      <a href="/us/en/drive" class="text-gray-700 hover:text-black font-semibold">Drive</a>
+      <a href="/us/en/business" class="text-gray-700 hover:text-black font-semibold">Business</a>
+      <a href="https://www.yatrieats.com/" class="text-gray-700 hover:text-black font-semibold">Yatri Eats</a>
+      <a href="https://help.yatri.com/" class="text-gray-700 hover:text-black font-semibold">Help</a>
+    </nav>
+    <div class="space-x-4 flex items-center">
+      <a href="#" class="text-sm font-medium hover:underline">English</a>
+      <a href="#" class="text-sm font-medium hover:underline">中文</a>
+      <a href="#" class="text-sm font-medium hover:underline">Español</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" class="max-w-7xl mx-auto p-6 space-y-16">
+
+    <!-- Hero Section -->
+    <section class="flex flex-col md:flex-row items-center md:items-start gap-8">
+      <div class="md:w-1/2 space-y-6">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Go anywhere with Yatri</h1>
+        <p class="text-gray-700 text-lg">Request a ride, hop in, and go.</p>
+        <div class="space-y-4">
+          <div>
+            <label for="pickup" class="block text-sm font-semibold mb-1">Pickup location</label>
+            <input id="pickup" type="text" placeholder="Search" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+          <div>
+            <label for="dropoff" class="block text-sm font-semibold mb-1">Dropoff location</label>
+            <input id="dropoff" type="text" placeholder="Search" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black" />
+          </div>
+        </div>
+        <a href="https://m.uber.com/looking" class="inline-block mt-4 bg-black text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-800 transition">See prices</a>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1684852612/assets/ba/4947c1-b862-400e-9f00-668f4926a4a2/original/Ride-with-Uber.png" alt="Ride with Uber" class="rounded-lg shadow-lg" />
+      </div>
+    </section>
+
+    <!-- Suggestions Section -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6">Suggestions</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Suggestion Cards -->
+        <a href="#" class="group border border-gray-200 rounded-lg p-4 hover:shadow-lg transition flex flex-col items-center text-center">
+          <img src="https://cn-geo1.uber.com/static/mobile-content/Courier.png" alt="Courier" class="w-20 h-20 mb-4" />
+          <h3 class="font-semibold mb-1">Courier</h3>
+          <p class="text-gray-600 text-sm">Same-day delivery made easy.</p>
+          <span class="mt-2 text-sm font-semibold text-black group-hover:underline">Details</span>
+        </a>
+        <a href="#" class="group border border-gray-200 rounded-lg p-4 hover:shadow-lg transition flex flex-col items-center text-center">
+          <img src="https://mobile-content.uber.com/launch-experience/grocery.png" alt="Grocery" class="w-20 h-20 mb-4" />
+          <h3 class="font-semibold mb-1">Grocery</h3>
+          <p class="text-gray-600 text-sm">Groceries to your door with Yatri Eats.</p>
+          <span class="mt-2 text-sm font-semibold text-black group-hover:underline">Details</span>
+        </a>
+        <!-- More cards can be added similarly -->
+      </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="flex flex-col md:flex-row items-center gap-8 bg-gray-50 p-8 rounded-lg">
+      <div class="md:w-1/2 space-y-4">
+        <h2 class="text-3xl font-bold">Log in to see your account details</h2>
+        <p class="text-gray-700">View past trips, tailored suggestions, support resources, and more.</p>
+        <a href="https://auth.uber.com/login" class="inline-block bg-black text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-800 transition">Log in to your account</a>
+        <p class="mt-2 text-sm text-gray-600">Don’t have a Yatri account? <a href="https://get.uber.com/sign-up" class="text-black underline">Sign up</a></p>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://www.uber-assets.com/image/upload/q_auto:eco,c_fill,h_368,w_552/v1565731652/assets/23/b32795-6d32-4ca0-a706-2de957b0847a/original/Rider_driver_login-2.svg" alt="Login" class="rounded-lg shadow-lg" />
+      </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section class="text-center max-w-4xl mx-auto space-y-6">
+      <h2 class="text-3xl font-bold">It’s easier in the app</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-12">
+        <div>
+          <a href="#" class="block mb-2 font-semibold hover:underline">Download the Yatri app</a>
+          <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_150,h_150/v1721211866/assets/74/1dcc04-bf5b-4997-8317-3621cd20f80e/original/drive-deliver.svg" alt="QR" class="mx-auto" />
+          <p class="text-sm text-gray-600">Scan to download</p>
+        </div>
+        <div>
+          <a href="#" class="block mb-2 font-semibold hover:underline">Download the Driver app</a>
+          <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_150,h_150/v1721211879/assets/ac/9dc34c-7eb2-49fe-b06a-fb15ae9114d3/original/ride.svg" alt="QR" class="mx-auto" />
+          <p class="text-sm text-gray-600">Scan to download</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 border-t border-gray-300 p-6 mt-16 text-center text-sm text-gray-600">
+    <p>&copy; 2025 Yatri Technologies Inc. All rights reserved.</p>
+    <div class="mt-2 space-x-4">
+      <a href="#" class="hover:underline">Privacy</a>
+      <a href="#" class="hover:underline">Terms</a>
+      <a href="#" class="hover:underline">Accessibility</a>
+    </div>
+  </footer>
+
+</body>
+</html>
